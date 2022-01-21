@@ -46,13 +46,5 @@ public class HouseAttri {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "HouseAttri{" +
-                "houseId=" + houseId +
-                ", houseNo=" + houseNo +
-                ", status='" + status + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
+
 }
