@@ -1,14 +1,11 @@
 package com.example.housemanagement.Model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class HouseAttri {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private int houseId ;
     private int houseNo ;
     private String status ;
