@@ -1,8 +1,9 @@
 package com.example.housemanagement.Repository;
 
+import com.example.housemanagement.Model.HouseAttri;
 import org.springframework.data.repository.CrudRepository;
-import org.apache.catalina.User;
 
-public interface UserRepository extends CrudRepository<User, Integer>{
+
+public interface UserRepository extends CrudRepository<HouseAttri, Integer>{
 }
 
