@@ -16,6 +16,6 @@ public class HouseManagementApplication {
 
     @GetMapping
     public String Hello(){
-        return "First API" ;
+        return "Hello ! Ello " ;
     }
 }
