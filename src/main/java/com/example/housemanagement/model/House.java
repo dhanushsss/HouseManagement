@@ -1,10 +1,10 @@
 package com.example.housemanagement.model;
 
 public class House {
-private int reqid ;
-private int houseNo ;
-private String status ;
-private String type;
+    private int reqid ;
+    private int houseNo ;
+    private String status ;
+    private String type;
 
     public int getReqid() {
         return reqid;
@@ -38,7 +38,13 @@ private String type;
         this.type = type;
     }
 
-public String toString(){
-return "houseId : " + reqid +"\n" + "houseNo : " + houseNo +"\n" + "status : " + status +"\n" + "type : " + type;
-}
+    @Override
+    public String toString() {
+        return "{" +
+                "reqid=" + reqid +
+                ", houseNo=" + houseNo +
+                ", status='" + status + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
