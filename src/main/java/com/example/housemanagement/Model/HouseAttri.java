@@ -1,18 +1,19 @@
-package com.example.housemanagement.model;
+package com.example.housemanagement.Model;
 
-public class House {
-    private int reqid ;
+public class HouseAttri {
+
+    private int houseId ;
     private int houseNo ;
     private String status ;
-    private String type;
+    private String type ;
 
 
-    public int getReqid() {
-        return reqid;
+    public int getHouseId() {
+        return houseId;
     }
 
-    public void setReqid(int reqid) {
-        this.reqid = reqid;
+    public void setHouseId(int houseId) {
+        this.houseId = houseId;
     }
 
     public int getHouseNo() {
@@ -41,8 +42,8 @@ public class House {
 
     @Override
     public String toString() {
-        return "{" +
-                "reqid=" + reqid +
+        return "HouseAttri{" +
+                "houseId=" + houseId +
                 ", houseNo=" + houseNo +
                 ", status='" + status + '\'' +
                 ", type='" + type + '\'' +
