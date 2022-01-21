@@ -6,6 +6,7 @@ public class House {
     private String status ;
     private String type;
 
+
     public int getReqid() {
         return reqid;
     }
