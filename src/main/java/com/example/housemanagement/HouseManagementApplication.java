@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HouseManagementApplication {
 
-
     public static void main(String[] args) {
         SpringApplication.run(HouseManagementApplication.class, args);
         
