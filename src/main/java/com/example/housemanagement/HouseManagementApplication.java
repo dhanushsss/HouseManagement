@@ -13,9 +13,4 @@ public class HouseManagementApplication {
         SpringApplication.run(HouseManagementApplication.class, args);
         
     }
-
-    @GetMapping
-    public String Hello(){
-        return "Hello ! Ello " ;
-    }
 }
