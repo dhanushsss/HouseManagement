@@ -20,12 +20,19 @@ public class HouseService {
         return houses;
     }
 
-
-
-
+    public void saveOrUpdate(HouseAttri house){
+        userRepository.save(house);
+    }
+//
 //    public HouseAttri getHouseByType(String type){
 //        return userRepository.findById();
 //    }
+
+
+
+
+
+
 
 
     public void delete(int houseId){
@@ -34,9 +41,6 @@ public class HouseService {
 
 
 
-    public void saveOrUpdate(HouseAttri house){
-        userRepository.save(house);
-    }
 
 
 
