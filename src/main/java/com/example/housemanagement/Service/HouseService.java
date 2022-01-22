@@ -13,37 +13,22 @@ public class HouseService {
     @Autowired
     UserRepository userRepository;
 
-
     public List<HouseAttri> getAllHouse(){
         List<HouseAttri> houses=new ArrayList<>();
         userRepository.findAll().forEach(house->houses.add(house));
         return houses;
     }
-
     public void saveOrUpdate(HouseAttri house){
         userRepository.save(house);
     }
-//
-//    public HouseAttri getHouseByType(String type){
-//        return userRepository.findById();
-//    }
-
-
-
-
-
-
-
-
-    public void delete(int houseId){
-        userRepository.deleteById(houseId);
+    public HouseAttri getHouseByType(String type){
+        int id = Integer.valueOf(type);
+        return userRepository.findById(id).get();
     }
 
-
-
-
-
-
+    public void getDelete(int houseId){
+         userRepository.deleteById(houseId);
+    }
 
     public HouseAttri getHouseById(int houseId){
         return userRepository.findById(houseId).get();

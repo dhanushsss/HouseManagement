@@ -26,37 +26,26 @@ public class MainController {
 //        houseService.saveOr(houseAttri);
 //        return houseAttri.getHouseId();
 //    }
-
-
     @PostMapping("/saveHouse")
-    private int saveHouse(@RequestBody HouseAttri house){
+    private String saveHouse(@RequestBody HouseAttri house){
         houseService.saveOrUpdate(house);
-        return house.getHouseId();
+        return house.toString();
     }
-
-
-
-
-    @GetMapping("/getByType/{type}")
-    private HouseAttri getHouseByType(@PathVariable("type") String type){
+    @GetMapping("/getHouse")
+    private HouseAttri getHouseById(@RequestParam("id") int id){
+        return houseService.getHouseById(id);
+    }
+    @GetMapping("/getByType")
+    private HouseAttri getHouseByType(@RequestParam("type") String type){
         return houseService.getHouseByType(type);
     }
-
-
-
-
-
-    @DeleteMapping("/deleteHouse/{houseId}")
+    @DeleteMapping("/deleteHouse/{id}")
     private void deleteHouse(@PathVariable("houseId") int houseId){
-        houseService.delete(houseId);
-
+         houseService.getDelete(houseId);
     }
     @GetMapping("/getAllHouse")
     private List<HouseAttri> getAllHouse(){
         return houseService.getAllHouse();
     }
-    @GetMapping("/getHouse/{id}")
-    private HouseAttri getHouseById(@PathVariable("id") int id){
-        return houseService.getHouseById(id);
-    }
+
 }

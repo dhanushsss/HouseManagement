@@ -24,7 +24,7 @@ public class HouseManagementApplicationTests {
     @Test
     public void test_case1() throws Exception {
 
-        String dataOne = "{\"houseId\":\"12881\",\"houseNo\":\"003\",\"status\":\"Not Occupied\",\"type\":\"2BHK\"}";
+        String dataOne = "{\"houseId\":\"12881\",\"houseNo\":\"003\",\"status\":\"Not Occupied\",\"type\":\"2\"}";
         mockMvc.perform(MockMvcRequestBuilders.post("/saveHouse")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(dataOne)
@@ -58,9 +58,9 @@ public class HouseManagementApplicationTests {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.houseNo").value("003"))
+                .andExpect(jsonPath("$.houseNo").value("3"))
                 .andExpect(jsonPath("$.status").value("Not Occupied"))
-                .andExpect(jsonPath("$.type").value("2BHK"))
+                .andExpect(jsonPath("$.type").value("2"))
                 .andReturn();
 
     }
@@ -83,7 +83,6 @@ public class HouseManagementApplicationTests {
     //Delete A House
     @Test
     public void test_case5() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders.get("/deleteHouse")
                         .param("id","12881")
                         .contentType(MediaType.APPLICATION_JSON)

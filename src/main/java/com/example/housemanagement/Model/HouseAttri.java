@@ -41,5 +41,4 @@ public class HouseAttri {
         this.type = type;
     }
 
-
 }
