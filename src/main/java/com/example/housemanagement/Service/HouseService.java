@@ -23,10 +23,11 @@ public class HouseService {
 
 
 
-    public HouseAttri getHouseByType(String type){
-        int id=Integer.parseInt(type);
-        return userRepository.findById(id).get();
-    }
+//    public HouseAttri getHouseByType(String type){
+//        return userRepository.findById();
+//    }
+
+
     public void delete(int houseId){
         userRepository.deleteById(houseId);
     }

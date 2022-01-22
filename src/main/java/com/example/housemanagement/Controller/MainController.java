@@ -42,6 +42,10 @@ public class MainController {
         return houseService.getHouseByType(type);
     }
 
+
+
+
+
     @DeleteMapping("/deleteHouse/{houseId}")
     private void deleteHouse(@PathVariable("houseId") int houseId){
         houseService.delete(houseId);
