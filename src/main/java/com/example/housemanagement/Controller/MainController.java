@@ -9,43 +9,50 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/all")
 public class MainController {
     @Autowired
-    private UserRepository userRepository;
     HouseService houseService;
+//    @Autowired
+    private UserRepository userRepository;
+//    HouseService houseService;
 //    @PostMapping(path = "/savehouse")
 //    public HouseAttri addUser(@RequestBody HouseAttri house) {
 //        userRepository.save(house);
 //        return house;
 //    }
 //
-//    @GetMapping(path = "/find")
-//    public Iterable<HouseAttri> getUser() {
-//        Iterable<HouseAttri> list = userRepository.findAll();
-//        return list;
+//    @PostMapping(path="/saveHouse")
+//    private int saveHouse(@RequestBody HouseAttri houseAttri){
+//        houseService.saveOr(houseAttri);
+//        return houseAttri.getHouseId();
 //    }
 
-    @PostMapping(path="/saveHouse")
-    private int saveHouse(@RequestBody HouseAttri houseAttri){
-        houseService.saveOr(houseAttri);
-        return houseAttri.getHouseId();
+
+    @PostMapping("/saveHouse")
+    private int saveHouse(@RequestBody HouseAttri house){
+        houseService.saveOrUpdate(house);
+        return house.getHouseId();
     }
 
-    @GetMapping(path = "/getByType/{type}")
-    private HouseAttri getHouseType (@PathVariable("type")String type){
-        return houseService.gethouseByType(type);
+
+
+
+    @GetMapping("/getByType/{type}")
+    private HouseAttri getHouseByType(@PathVariable("type") String type){
+        return houseService.getHouseByType(type);
     }
+
     @DeleteMapping("/deleteHouse/{houseId}")
-    private void deleteHouse (@PathVariable("houseId")int houseId){
+    private void deleteHouse(@PathVariable("houseId") int houseId){
         houseService.delete(houseId);
+
     }
     @GetMapping("/getAllHouse")
-    private List<HouseAttri> getAllHouse (){
+    private List<HouseAttri> getAllHouse(){
         return houseService.getAllHouse();
     }
-    @GetMapping("/getById/{id}")
-    private HouseAttri getHouseById(@PathVariable("id")int id){
+    @GetMapping("/getHouse/{id}")
+    private HouseAttri getHouseById(@PathVariable("id") int id){
         return houseService.getHouseById(id);
     }
 }

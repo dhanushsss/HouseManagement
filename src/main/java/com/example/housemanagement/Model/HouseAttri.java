@@ -1,8 +1,6 @@
 package com.example.housemanagement.Model;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 @Entity
 public class HouseAttri {
     @Id
